@@ -12,6 +12,7 @@
     <color name="vk_auth_back_color">#517298</color>
     <color name="vk_auth_divider_color">#435f7e</color>
     <color name="vk_auth_pressed_color">#2D3A506B</color>
+    <color name="skip_button_color">#8affffff</color>
     
     <!-- fragment_profile -->
     <color name="profile_text_color">#b3000000</color>
