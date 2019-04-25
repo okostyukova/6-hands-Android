@@ -37,40 +37,20 @@ import butterknife.OnClick;
 
 public class ProfileFragment extends MvpAppCompatFragment implements ProfileView {
 
-    // add fonts
-
     @BindView(R.id.profile_name)
     TextView name;
 
     @BindView(R.id.profile_pic)
     ImageView profilePic;
 
-    @BindView(R.id.flat_photo)
-    ImageView flatPhoto;
-
-    @BindView(R.id.edit_button)
-    TextView editFlatButton;
-
-    @BindView(R.id.line_color)
-    View lineColor;
-
-    @BindView(R.id.metro_station)
-    TextView metroStation;
-
-    @BindView(R.id.number_of_rooms)
-    TextView numberOfRooms;
-
-    @BindView(R.id.flat_price)
-    TextView flatPrice;
-
-    @BindView(R.id.number_of_watches)
-    TextView numberOfWatches;
-
-    @BindView(R.id.new_watches)
-    TextView numberOfNewWatches;
-
     @BindView(R.id.flat_recycler)
     RecyclerView recyclerView;
+
+    @BindView(R.id.vk_button)
+    View vkButton;
+
+    @BindView(R.id.facebook_button)
+    View fbButton;
 
     @BindView(R.id.fab)
     FloatingActionButton addApartmentButton;
@@ -142,10 +122,6 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
         adapter =  new ApartmentAdapter(getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        Glide.with(this)
-                .load(R.drawable.flat)
-                .apply(RequestOptions.circleCropTransform())
-                .into(flatPhoto);
     }
 
     @OnClick(R.id.edit_button)
