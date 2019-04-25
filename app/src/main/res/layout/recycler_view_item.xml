@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/apartments_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/flat_photo"
+        android:layout_width="398dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+
+    <TextView
+        android:id="@+id/edit_button"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/edit"
+        android:background="@drawable/edit_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="@color/edit_button"
+        android:fontFamily="sans-serif-light"
+        android:lineSpacingExtra="80.5sp"
+        app:layout_constraintEnd_toEndOf="@+id/flat_photo"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintTop_toTopOf="@+id/flat_photo" />
+
+    <View
+        android:id="@+id/line_color"
+        android:layout_width="@dimen/metro_circle_size"
+        android:layout_height="@dimen/metro_circle_size"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/metro_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flat_photo" />
+
+    <TextView
+        android:id="@+id/metro_station"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
+        android:lineSpacingExtra="3.1sp"
+        android:text="Славянский бульвар"
+        android:textColor="@color/point_color"
+        app:layout_constraintStart_toEndOf="@+id/line_color"
+        app:layout_constraintTop_toBottomOf="@+id/flat_photo" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="@dimen/point_size"
+        android:layout_height="@dimen/point_size"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/point_circle"
+        app:layout_constraintStart_toEndOf="@id/metro_station"
+        app:layout_constraintTop_toBottomOf="@id/flat_photo" />
+
+    <TextView
+        android:id="@+id/number_of_rooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text="1-комн. кв."
+        android:lineSpacingExtra="35.1sp"
+        android:textColor="@color/point_color"
+        app:layout_constraintStart_toEndOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/flat_photo" />
+
+    <TextView
+        android:id="@+id/flat_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text="10000Р"
+        android:textStyle="bold"
+        android:lineSpacingExtra="75.4sp"
+        android:textColor="@color/point_color"
+        app:layout_constraintStart_toEndOf="@+id/number_of_rooms"
+        app:layout_constraintTop_toBottomOf="@+id/flat_photo" />
+
+    <TextView
+        android:id="@+id/number_of_watches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Просмотров: 98"
+        android:lineSpacingExtra="36.5sp"
+        android:textColor="@color/point_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metro_station" />
+
+    <TextView
+        android:id="@+id/new_watches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Новых: 65"
+        android:textColor="#55c5b7"
+        android:lineSpacingExtra="36.5sp"
+        app:layout_constraintStart_toEndOf="@+id/number_of_watches"
+        app:layout_constraintTop_toBottomOf="@+id/metro_station" />
+
+    <View
+        android:layout_width="@dimen/line_width"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/line_color"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_of_watches" />
+
+</android.support.constraint.ConstraintLayout>

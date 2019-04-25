@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <solid android:color="@color/fb_button_background" />
+            <corners android:radius="1000dp"/>
+        </shape>
+    </item>
+
+    <item android:right="60dp"
+        android:left="10dp"
+        android:top="2dp"
+        android:bottom="2dp">
+        <bitmap android:src="@drawable/plus_sign"
+            android:gravity="center_vertical|left"/>
+    </item>
+
+</layer-list>
