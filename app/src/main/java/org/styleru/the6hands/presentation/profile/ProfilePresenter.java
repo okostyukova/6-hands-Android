@@ -15,7 +15,6 @@ import io.reactivex.schedulers.Schedulers;
 @InjectViewState
 public class ProfilePresenter extends MvpPresenter<ProfileView> {
 
-
     private final UserInfoInteractor userInfoInteractor;
 
     @Inject

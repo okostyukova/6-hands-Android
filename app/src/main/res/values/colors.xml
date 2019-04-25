@@ -16,4 +16,12 @@
     <!-- fragment_profile -->
     <color name="profile_text_color">#b3000000</color>
     <color name="profile_pressed_text_color">#7A000000</color>
+    <color name="vk_button_background">#507299</color>
+    <color name="fb_button_background">#3b5998</color>
+    <color name="fb_btn_color">#fefefe</color>
+    <color name="blue_line">#0004f8</color>
+    <color name="edit_button">#ffffff</color>
+    <color name="point_color">#000000</color>
+    <color name="new_watches">#55c5b7</color>
+    <color name="line_color">#d8d8d8</color>
 </resources>

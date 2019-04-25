@@ -36,7 +36,6 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
     private Navigator navigator = new SupportAppNavigator(this, R.id.main_container);
 
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
