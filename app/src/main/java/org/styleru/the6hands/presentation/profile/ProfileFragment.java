@@ -46,6 +46,9 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
     @BindView(R.id.flat_recycler)
     RecyclerView recyclerView;
 
+    @BindView(R.id.change_profile_data)
+    TextView changeProfileData;
+
     @BindView(R.id.vk_button)
     View vkButton;
 
@@ -87,8 +90,9 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
     public void setUser(User user) {
         name.setText(user.getFirstName());
         Glide.with(this).
-                load(user.getPhoto200Url()).
-                into(profilePic);
+                load(user.getPhoto200Url())
+                .apply(RequestOptions.circleCropTransform())
+                .into(profilePic);
     }
 
     @OnClick(R.id.change_profile_data)
@@ -104,6 +108,12 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
     @Override
     public void showApartments(List<Apartment> apartments) {
         adapter.setApartments(apartments);
+    }
+
+    public void init() {
+        adapter =  new ApartmentAdapter(getContext());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
@@ -117,14 +127,7 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
         });
     }
 
-    public void init() {
-
-        adapter =  new ApartmentAdapter(getContext());
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-    }
-
-    @OnClick(R.id.edit_button)
+    @OnClick(R.id.change_profile_data)
     public void editData() {
 
     }

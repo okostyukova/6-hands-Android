@@ -7,36 +7,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.domain.entities.Apartment;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.ViewHolder>{
 
     private Context context;
-    private List<Apartment> apartments;
-    private onItemClickListener listener;
+    private List<Apartment> apartments = new ArrayList<>();
 
     @Inject
     ApartmentAdapter(Context context) {
         this.context = context;
-        this.apartments = new ArrayList<>();
-        this.listener = new onItemClickListener() {
-            @Override
-            public void onItemClick(Apartment apartment) {
-
-            }
-        };
     }
 
     @NonNull
@@ -49,11 +44,13 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.apartment = apartments.get(i);
+        Apartment apartment = apartments.get(i);
 
-        Glide.with(viewHolder.itemView.getContext())
-                .load(R.drawable.flat)
-                .into(viewHolder.flatPhoto);
+        viewHolder.metroStation.setText(apartment.getMetroStation());
+        viewHolder.numberOfRooms.setText(String.valueOf(apartment.getNumberOfRooms()));
+        viewHolder.flatPrice.setText(String.valueOf(apartment.getNumberOfRooms()));
+        viewHolder.numberOfWatches.setText(String.valueOf(apartment.getNumberOfWatches()));
+        viewHolder.numberOfNewWatches.setText(String.valueOf(apartment.getNumberOfNewWatches()));
     }
 
     @Override
@@ -62,9 +59,28 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.edit_button)
+        TextView editApartmentButton;
+
+        @BindView(R.id.line_color)
+        View lineColor;
+
+        @BindView(R.id.metro_station)
+        TextView metroStation;
+
+        @BindView(R.id.number_of_rooms)
+        TextView numberOfRooms;
+
+        @BindView(R.id.flat_price)
+        TextView flatPrice;
+
+        @BindView(R.id.number_of_watches)
+        TextView numberOfWatches;
+
+        @BindView(R.id.new_watches)
+        TextView numberOfNewWatches;
 
         private Apartment apartment;
-        private ImageView flatPhoto;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,13 +89,12 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
 
         @OnClick(R.id.apartments_item)
         void onClickApartment() {
-            if (listener != null) {
-                listener.onItemClick(apartments.get(getAdapterPosition()));
-            }
+
         }
     }
 
     public void setApartments(List<Apartment> data) {
         this.apartments.addAll(data);
+        notifyDataSetChanged();
     }
 }

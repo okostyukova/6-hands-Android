@@ -3,9 +3,25 @@ package org.styleru.the6hands.domain.entities;
 public class Apartment {
 
     private int apartmentId, numberOfRooms, numberOfMeters, livingSpace, kitchen,
-            ceilingHeight, floor, price, numberOfWatches, idUser, idFacility;
+            ceilingHeight, floor, price, numberOfWatches, numberOfNewWatches, idUser, idFacility;
 
-    private String address;
+    private String address, metroStation;
+
+    public String getMetroStation() {
+        return metroStation;
+    }
+
+    public void setMetroStation(String metroStation) {
+        this.metroStation = metroStation;
+    }
+
+    public int getNumberOfNewWatches() {
+        return numberOfNewWatches;
+    }
+
+    public void setNumberOfNewWatches(int numberOfNewWatches) {
+        this.numberOfNewWatches = numberOfNewWatches;
+    }
 
     public int getApartmentId() {
         return apartmentId;
