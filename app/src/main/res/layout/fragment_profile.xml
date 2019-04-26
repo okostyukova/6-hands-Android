@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/profile_name"
         app:layout_constraintStart_toStartOf="parent"/>
     
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <ImageView
         android:id="@+id/profile_pic"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -44,7 +44,8 @@
         android:layout_marginEnd="@dimen/profile_sides_margin"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/vk_button"
@@ -55,7 +56,8 @@
         android:src="@drawable/vk_logo"
         android:background="@drawable/vk_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/change_profile_data" />
+        app:layout_constraintTop_toBottomOf="@+id/change_profile_data"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/facebook_button"
@@ -75,8 +77,10 @@
         android:id="@+id/flat_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/vk_button"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vk_button"
         tools:listitem="@layout/recycler_view_item">
 
     </android.support.v7.widget.RecyclerView>
@@ -85,12 +89,10 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="70dp"
         android:src="@drawable/plus_sign"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

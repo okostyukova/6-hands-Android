@@ -7,6 +7,12 @@ public class Apartment {
 
     private String address, metroStation;
 
+    public Apartment(int apartmentId, String address, String metroStation) {
+        this.apartmentId = apartmentId;
+        this.address = address;
+        this.metroStation = metroStation;
+    }
+
     public String getMetroStation() {
         return metroStation;
     }

@@ -125,6 +125,10 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
                 }
             }
         });
+        Glide.with(this)
+                .load(R.drawable.flat)
+                .apply(RequestOptions.circleCropTransform())
+                .into(profilePic);
     }
 
     @OnClick(R.id.change_profile_data)

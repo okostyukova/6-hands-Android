@@ -38,7 +38,7 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return new ViewHolder(LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.fragment_profile, viewGroup, false));
+                .inflate(R.layout.recycler_view_item, viewGroup, false));
 
     }
 
@@ -47,10 +47,10 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
         Apartment apartment = apartments.get(i);
 
         viewHolder.metroStation.setText(apartment.getMetroStation());
-        viewHolder.numberOfRooms.setText(String.valueOf(apartment.getNumberOfRooms()));
-        viewHolder.flatPrice.setText(String.valueOf(apartment.getNumberOfRooms()));
-        viewHolder.numberOfWatches.setText(String.valueOf(apartment.getNumberOfWatches()));
-        viewHolder.numberOfNewWatches.setText(String.valueOf(apartment.getNumberOfNewWatches()));
+//        viewHolder.numberOfRooms.setText(String.valueOf(apartment.getNumberOfRooms()));
+//        viewHolder.flatPrice.setText(String.valueOf(apartment.getNumberOfRooms()));
+//        viewHolder.numberOfWatches.setText(String.valueOf(apartment.getNumberOfWatches()));
+//        viewHolder.numberOfNewWatches.setText(String.valueOf(apartment.getNumberOfNewWatches()));
     }
 
     @Override
@@ -59,8 +59,12 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
+
         @BindView(R.id.edit_button)
         TextView editApartmentButton;
+
+        @BindView(R.id.flat_photo)
+        ImageView apartmentPhoto;
 
         @BindView(R.id.line_color)
         View lineColor;
@@ -80,7 +84,6 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.View
         @BindView(R.id.new_watches)
         TextView numberOfNewWatches;
 
-        private Apartment apartment;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
+import com.vk.api.sdk.VK;
 
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.SixHandsApplication;

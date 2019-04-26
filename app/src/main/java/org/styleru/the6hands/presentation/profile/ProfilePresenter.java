@@ -4,7 +4,11 @@ package org.styleru.the6hands.presentation.profile;
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
+import org.styleru.the6hands.domain.entities.Apartment;
 import org.styleru.the6hands.domain.interactors.UserInfoInteractor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -16,6 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 public class ProfilePresenter extends MvpPresenter<ProfileView> {
 
     private final UserInfoInteractor userInfoInteractor;
+    private final List<Apartment> apartments = new ArrayList<>();
 
     @Inject
     ProfilePresenter(UserInfoInteractor userInfoInteractor) {
@@ -32,5 +37,12 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
                         user -> getViewState().setUser(user),
                         e -> {}
                 );
+
+        apartments.add(new Apartment(1,  "Some address", "Some station"));
+        apartments.add(new Apartment(1,  "Some address", "Some station"));
+        apartments.add(new Apartment(1,  "Some address", "Some station"));
+        apartments.add(new Apartment(1,  "Some address", "Some station"));
+
+        getViewState().showApartments(apartments);
     }
 }
