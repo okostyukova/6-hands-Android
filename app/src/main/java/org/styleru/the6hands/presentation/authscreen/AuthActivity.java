@@ -52,7 +52,6 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SixHandsApplication.getAppComponent().inject(this);

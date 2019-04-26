@@ -17,4 +17,6 @@
     <string name="change_data">Изменить данные</string>
     <string name="nav_dialog_title">Связь</string>
     <string name="unauthorized_name">Anonymous</string>
+    <string name="facebook">Facebook</string>
+    <string name="edit">Редактировать</string>
 </resources>
